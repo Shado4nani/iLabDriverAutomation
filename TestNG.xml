@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="driverAutomationV1">
+    <test name="iLab Automation Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ILab.testCases.TC_JobsZA_001"></class>
+        </classes>
+    </test>
+    
+</suite>
