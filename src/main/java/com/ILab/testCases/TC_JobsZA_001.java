@@ -87,7 +87,7 @@ public class TC_JobsZA_001 extends BaseClass {
 
         for(int i=1;i<=rownum;i++){
             for(int j=0;j<colcount;j++){
-                candidateData[i-1][j]=XLUtils.getCellData(path,"Sheet1",i,j);
+                //candidateData[i-1][j]=XLUtils(path,"Sheet1",i,j);
             }
         }
 
