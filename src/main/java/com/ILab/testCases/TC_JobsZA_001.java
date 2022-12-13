@@ -18,9 +18,6 @@ public class TC_JobsZA_001 extends BaseClass {
 
         CareerPage cPage = new CareerPage(driver);
 
-        cPage.setName(name);
-        cPage.setSurname(surname);
-
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         driver.get(baseURL);
@@ -56,10 +53,10 @@ public class TC_JobsZA_001 extends BaseClass {
         driver.switchTo().frame("hs-form-iframe-0");
         System.out.println(driver.getTitle());
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        cPage.setName(candidateName);
+        cPage.setName(name);
         test.log(LogStatus.PASS, "Entered candidate name");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        cPage.setSurname(candidateSurname);
+        cPage.setSurname(surname);
         test.log(LogStatus.PASS, "Entered candidate surname");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         cPage.setEmail(candidateEmail);
@@ -87,7 +84,8 @@ public class TC_JobsZA_001 extends BaseClass {
 
         for(int i=1;i<=rownum;i++){
             for(int j=0;j<colcount;j++){
-                //candidateData[i-1][j]=XLUtils(path,"Sheet1",i,j);
+                candidateData[i-1][j]=XLUtils.getCellData(path,"Sheet1",i,j);
+                System.out.println(candidateData);
             }
         }
 

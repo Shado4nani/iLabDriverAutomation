@@ -43,9 +43,6 @@ public class BaseClass {
     @BeforeClass
     public void setup(String browser){
 
-        report = new ExtentReports(System.getProperty("user.dir")+"iLabReport.html");
-        test = report.startTest("iLabReportTest");
-
         if(browser.equals("chrome")){
             System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "//src//main//resources//Drivers//chromedriver");
             driver=new ChromeDriver();
@@ -55,6 +52,9 @@ public class BaseClass {
             driver=new ChromeDriver();
 
         }
+
+        report = new ExtentReports(System.getProperty("user.dir")+"/iLabDriverAutomation/iLabReport.html");
+        test = report.startTest("iLabReportTest");
     }
 
     @AfterClass
@@ -62,7 +62,7 @@ public class BaseClass {
 
         report.endTest(test);
         report.flush();
-        driver.quit();
+        //driver.quit();
     }
 
     public void captureScreen(WebDriver driver, String tname) throws IOException {
