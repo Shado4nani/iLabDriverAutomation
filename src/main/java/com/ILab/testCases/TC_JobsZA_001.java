@@ -30,7 +30,7 @@ public class TC_JobsZA_001 extends BaseClass {
         }else{
 
             captureScreen(driver,"detailsTest");
-            //Assert.fail("Failed to launch");
+            Assert.assertFalse(false);
         }
 
         driver.manage().window().maximize();

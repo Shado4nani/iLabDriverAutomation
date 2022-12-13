@@ -25,8 +25,6 @@ public class BaseClass {
 
     ReadConfigFile readconfig = new ReadConfigFile();
     public String baseURL=readconfig.readProperty("baseURL");
-    public String candidateName = "Walter";
-    public String candidateSurname = "Mashegoane";
     public String candidateEmail = "automationAssessment@iLABQuality.com";
     public String errorMessage = "Please complete this required field.";
 
