@@ -22,25 +22,26 @@ public class TC_JobsZA_001 extends BaseClass {
 
         driver.get(baseURL);
 
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         test.log(LogStatus.PASS, "Launch page");
 
-        if(driver.getTitle().equals("South Africa - iLab2")){
+        if(driver.getTitle().equals("South Africa - iLab")){
 
             Assert.assertTrue(true);
         }else{
 
             captureScreen(driver,"detailsTest");
-            Assert.fail();
+            Assert.fail("Failed to launch");
         }
 
         driver.manage().window().maximize();
         js.executeScript("window.scrollBy(0,800)");
-        driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         cPage.clickZARbutton();
         test.log(LogStatus.PASS, "Clicked on ZAR Button");
 
         js.executeScript("window.scrollBy(0,500)");
-        driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         cPage.clickFirstJobAvailable();
         test.log(LogStatus.PASS, "First JOB available");
 
