@@ -28,9 +28,6 @@ public class BaseClass {
     public String candidateEmail = "automationAssessment@iLABQuality.com";
     public String errorMessage = "Please complete this required field.";
 
-    Random randNumber = new Random();
-    public String candidatePhoneNumber = "0 " + randNumber.nextInt(99) +" "+ randNumber.nextInt(999) + " "+ randNumber.nextInt(9999);
-
     public static WebDriver driver;
 
     public static ExtentReports report;

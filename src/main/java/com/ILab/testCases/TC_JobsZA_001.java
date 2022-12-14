@@ -9,13 +9,16 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class TC_JobsZA_001 extends BaseClass {
-
+    Random randNumber = new Random();
+    public String candidatePhoneNumber = "0" + randNumber.nextInt(99) +randNumber.nextInt(999) + randNumber.nextInt(9999);
     @Test(dataProvider = "iLabTest")
     public void detailsTest(String name, String surname) throws Exception{
 
+        candidatePhoneNumber = candidatePhoneNumber.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
         CareerPage cPage = new CareerPage(driver);
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
